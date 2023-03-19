@@ -1,16 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:theme="@style/Theme.Room">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        tools:listitem="@layout/recyclerview_item" />
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Ecrã Inicial -->
+            <ImageButton
+                android:id="@+id/button_open_menu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/hamburger"
+                android:scaleType="fitCenter"
+                android:layout_margin="15dp"
+                android:background="#00000000"/>
+
+            <TextView
+                android:id="@+id/textviewDUX"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="18dp"
+                android:text="DUX"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"></TextView>
+
+            <RelativeLayout
+                android:id="@+id/userlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:layout_below="@+id/textviewDUX"
+                android:layout_marginRight="40dp"
+                android:layout_alignParentRight="true">
+
+
+                <ImageView
+                    android:id="@+id/imageviewuser"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/user"
+                    android:layout_centerHorizontal="true">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/textviewuser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageviewuser"
+                    android:text="mirra"
+                    android:layout_centerHorizontal="true">
+
+                </TextView>
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/imagem"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/estg"
+                android:layout_marginLeft="85dp"
+                android:layout_marginRight="85dp"
+                android:layout_marginBottom="60dp"
+                android:layout_above="@id/textviewtitulo"
+                android:alpha="0.8">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/textviewtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Procura o teu lugar: "
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="20dp"
+                android:layout_above="@+id/buttonBiblio"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+
+            <Button
+                android:id="@+id/buttonBiblio"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="15dp"
+                android:drawableLeft="@drawable/book"
+                android:textAlignment="center"
+                android:layout_above="@+id/buttonSalas"
+                android:text="BIBLIOTECA"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/buttonSalas"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="90dp"
+                android:drawableLeft="@drawable/sala"
+                android:text="SALAS DE ESTUDO"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/nav_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+        <!-- Menu -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hsjdfgljsadghfkljasd"></TextView>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
