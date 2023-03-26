@@ -2,40 +2,37 @@ package com.example.room
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.PopupMenu
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.room.adapter.CityAdapter
-import com.example.room.viewModel.CityViewModel
-import com.example.room.viewModel.CityViewModelFactory
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private val cityViewModel: CityViewModel by viewModels {
-        CityViewModelFactory((application as CitiesApplication).repository)
-    }
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navDrawer: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // recycler view
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = CityAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navDrawer = findViewById(R.id.nav_drawer)
 
-        // view model
-        //cityViewModel.allCities().observe(this, Observer { cities ->
-        ////Update the cached copy of the words in the adapter.
-        //    cities?.let { adapter.setCities(it) }
-        //})
+        val openMenuButton: ImageButton = findViewById(R.id.button_open_menu)
+        openMenuButton.setOnClickListener {
+            drawerLayout.openDrawer(navDrawer)
+        }
 
-        cityViewModel.allCities().observe(this, Observer{
-            cities -> cities?.let { adapter.setCities(it) }
-        })
 
     }
+
 }
