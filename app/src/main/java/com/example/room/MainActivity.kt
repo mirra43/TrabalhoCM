@@ -1,5 +1,6 @@
 package com.example.room
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -32,6 +33,12 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.openDrawer(navDrawer)
         }
 
+
+    }
+
+    fun salasEstudo(view: View) {
+        val intent = Intent(this, SalasEstudo::class.java)
+        startActivity(intent)
 
     }
 
