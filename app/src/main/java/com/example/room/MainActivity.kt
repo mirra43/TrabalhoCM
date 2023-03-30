@@ -36,10 +36,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun salasEstudo(view: View) {
-        val intent = Intent(this, SalasEstudo::class.java)
-        startActivity(intent)
 
-    }
 
 }
