@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.PopupMenu
+import android.widget.*
 import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -36,10 +33,32 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun salasEstudo(view: View) {
-        val intent = Intent(this, SalasEstudo::class.java)
-        startActivity(intent)
 
+    fun abrePaginaInicial(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Página Inicial", Toast.LENGTH_SHORT).show()
+    }
+
+    fun abreBiblioteca(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
+    }
+
+    fun abreSalaEstudo(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Salas de Estudo", Toast.LENGTH_SHORT).show()
+
+        //criar  SalasEstudo para isto funcionar
+        /*val intent = Intent(this, SalasEstudo::class.java)
+        startActivity(intent)*/
+    }
+    fun abreMapa(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+    }
+    fun abreLogout(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
     }
 
 }
