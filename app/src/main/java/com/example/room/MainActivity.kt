@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         //remover o toast
         Toast.makeText(applicationContext, "Abre Salas de Estudo", Toast.LENGTH_SHORT).show()
 
+        val intent = Intent(this, ListarSalas::class.java)
+        startActivity(intent)
         //criar  SalasEstudo para isto funcionar
         /*val intent = Intent(this, SalasEstudo::class.java)
         startActivity(intent)*/

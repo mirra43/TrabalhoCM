@@ -51,6 +51,7 @@
                 android:elevation="200dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="@color/verde"
                 app:cardCornerRadius="30dp">
 
@@ -124,14 +125,192 @@
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@android:color/white"
+            android:background="@color/amarelo"
             android:orientation="vertical">
 
             <!-- Menu -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hsjdfgljsadghfkljasd"></TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textviewmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"/>
+
+                <ImageView
+                    android:id="@+id/separador1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_below="@id/textviewmenu"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Botao Menu -->
+
+                <LinearLayout
+                    android:id="@+id/botaomenu1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separador1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abrePaginaInicial"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/casawhite"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Página Inicial"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Botao Menu -->
+
+                <LinearLayout
+                    android:id="@+id/botaomenu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/botaomenu1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreBiblioteca"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/bookwhite"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Biblioteca"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Botao Menu -->
+
+                <LinearLayout
+                    android:id="@+id/botaomenu3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/botaomenu2"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreSalaEstudo"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/salawhite"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Salas de Estudo"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Botao Menu -->
+
+                <LinearLayout
+                    android:id="@+id/botaomenu4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/botaomenu3"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreMapa"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/mapwhite"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Mapa ESTG"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/separador2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_below="@id/botaomenu4"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <!-- Botao Menu -->
+
+                <LinearLayout
+                    android:id="@+id/botaomenu5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separador2"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreLogout"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/exitwhite"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Terminar Sessão"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
