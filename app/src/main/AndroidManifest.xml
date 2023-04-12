@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.ar" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Room"
         tools:targetApi="31">
+        <activity
+            android:name=".TesteRA"
+            android:exported="false"
+            android:label="@string/title_activity_teste_ra"
+            android:theme="@style/Theme.Room.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -27,6 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>
