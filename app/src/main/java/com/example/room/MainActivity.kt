@@ -3,14 +3,11 @@ package com.example.room
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.activity.viewModels
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
+import retrofit2.Call
+import retrofit2.Callback
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         openMenuButton.setOnClickListener {
             drawerLayout.openDrawer(navDrawer)
         }
+
+
 
 
     }
@@ -64,3 +63,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
