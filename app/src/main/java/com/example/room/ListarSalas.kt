@@ -1,8 +1,10 @@
 package com.example.room
 
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.drawerlayout.widget.DrawerLayout
@@ -30,6 +32,10 @@ class ListarSalas : AppCompatActivity() {
         val openMenuButton: ImageButton = findViewById(R.id.button_open_menu)
         openMenuButton.setOnClickListener {
             drawerLayout.openDrawer(navDrawer)
+
+
+
+
         }
 
 
@@ -40,7 +46,10 @@ class ListarSalas : AppCompatActivity() {
     fun onTaskCompleted(salas: List<Sala>) {
         val salaRecyclerView = findViewById<RecyclerView>(R.id.recyclersalas)
         salaRecyclerView.layoutManager = LinearLayoutManager(this@ListarSalas)
+
         salaRecyclerView.adapter = SalasAdapter(salas)
+
+
     }
     class MyTask(private val callback: ListarSalas) : AsyncTask<String, Void, List<Sala>>() {
 
@@ -82,5 +91,7 @@ class ListarSalas : AppCompatActivity() {
         }
 
 
-    data class Sala(val id: Int, val nome: String)
+    data class Sala(val id: Int, val nome: String,val ocupada: Int)
+
+
 }

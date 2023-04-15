@@ -7,51 +7,53 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
-        android:elevation="200dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:elevation="200dp"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <View
                 android:id="@+id/indicativoCirculo"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:background="@drawable/circle"/>
+                android:background="@drawable/circle" />
 
             <TextView
                 android:id="@+id/sala"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="40dp"
                 android:text="Sala 1"
                 android:textColor="@color/verde"
-                android:textStyle="bold"
-                android:layout_marginStart="40dp"
-                android:layout_centerVertical="true"
-                ></TextView>
+                android:textStyle="bold"></TextView>
+
             <View
                 android:id="@+id/indicativoRetangulo"
                 android:layout_width="100dp"
                 android:layout_height="5dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/rectangle"/>
+                android:background="@drawable/rectangle" />
+
             <TextView
                 android:id="@+id/indicativoTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="livre"
-                android:textColor="@color/verde"
                 android:layout_below="@+id/indicativoRetangulo"
-                android:layout_marginEnd="50dp"></TextView>
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="50dp"
+                android:text="livre"
+                android:textColor="@color/verde"></TextView>
 
         </RelativeLayout>
 
