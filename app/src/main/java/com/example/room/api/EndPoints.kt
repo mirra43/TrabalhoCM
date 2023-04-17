@@ -9,7 +9,7 @@ interface EndPoints {
     fun getUsers(): Call<List<User>>
 
 
-    @GET("/getSalas.php")
+    @GET("salas")
     fun getSalas(): Call<List<Salas>>
 
 }

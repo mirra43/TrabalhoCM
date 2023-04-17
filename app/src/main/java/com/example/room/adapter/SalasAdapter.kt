@@ -12,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.room.InfoSalaEstudo
 import com.example.room.ListarSalas
 import com.example.room.R
+import com.example.room.api.Salas
 import com.example.room.api.User
 
-class SalasAdapter(val salas: List<ListarSalas.Sala>): RecyclerView.Adapter<SalasViewHolder>() {
+class SalasAdapter(val salas: List<Salas>): RecyclerView.Adapter<SalasViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalasViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_item, parent, false)
         return SalasViewHolder(view)
@@ -36,12 +37,11 @@ class SalasViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
     private val rect: View = itemView.findViewById(R.id.indicativoRetangulo)
     private val indtext: TextView = itemView.findViewById(R.id.indicativoTexto)
 
-    fun bind(sala: ListarSalas.Sala) {
+    fun bind(sala: Salas) {
         nome.text = sala.nome
         if(sala.ocupada == 0){
             val color = ContextCompat.getColor(itemView.context, R.color.vermelho)
-            circle.background.setColorFilter(color, PorterDuff.Mode.SRC_IN)
-            rect.background.setColorFilter(color, PorterDuff.Mode.SRC_IN)
+
             indtext.text = "ocupada"
             indtext.setTextColor(Color.RED)
             nome.setTextColor(Color.RED)
