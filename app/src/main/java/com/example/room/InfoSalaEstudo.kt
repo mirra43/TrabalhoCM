@@ -81,7 +81,6 @@ class InfoSalaEstudo : AppCompatActivity() {
                             indtext.text = "ocupada"
                             indtext.setTextColor(Color.RED)
                             nome.setTextColor(Color.RED)
-
                         }
                     }
                     Log.d("SALA", sala.toString())
