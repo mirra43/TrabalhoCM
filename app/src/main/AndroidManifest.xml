@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Room"
         tools:targetApi="31">
         <activity
+            android:name=".Lugares_Biblioteca"
+            android:exported="false" />
+        <activity
             android:name=".InfoSalaEstudo"
             android:exported="false" />
         <activity
