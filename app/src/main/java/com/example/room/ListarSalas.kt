@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.room.InfoSalaEstudo.Sala
+
 import com.example.room.adapter.SalasAdapter
 import com.example.room.api.EndPoints
 import com.example.room.api.Salas
