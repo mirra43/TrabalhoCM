@@ -40,8 +40,10 @@ class SalasViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
     fun bind(sala: Salas) {
         nome.text = sala.nome
         if(sala.ocupada == 0){
-            val color = ContextCompat.getColor(itemView.context, R.color.vermelho)
 
+            val color = ContextCompat.getColor(itemView.context, R.color.vermelho)
+            circle.background.setColorFilter(color, PorterDuff.Mode.SRC_IN)
+            rect.background.setColorFilter(color, PorterDuff.Mode.SRC_IN)
             indtext.text = "ocupada"
             indtext.setTextColor(Color.RED)
             nome.setTextColor(Color.RED)
