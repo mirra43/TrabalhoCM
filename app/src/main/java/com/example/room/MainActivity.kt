@@ -27,25 +27,28 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.openDrawer(navDrawer)
         }
 
-
-
-
     }
 
 
     fun abrePaginaInicial(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Página Inicial", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext, "Abre Página Inicial", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     fun abreBiblioteca(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, Lugares_Biblioteca::class.java)
+        startActivity(intent)
     }
 
     fun abreSalaEstudo(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Salas de Estudo", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext, "Abre Salas de Estudo", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, ListarSalas::class.java)
         startActivity(intent)

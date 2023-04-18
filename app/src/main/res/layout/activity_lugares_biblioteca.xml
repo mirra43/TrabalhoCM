@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Lugares_Biblioteca"
     android:theme="@style/Theme.Room">
 
 
@@ -42,7 +42,7 @@
                 android:textSize="15dp"
                 android:textStyle="bold"></TextView>
 
-        </RelativeLayout>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
@@ -799,7 +799,7 @@
                                 android:backgroundTint="@color/verde"></View>
 
                             <View
-                                android:id="@+id51"
+                                android:id="@+id/l51"
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
                                 android:layout_marginTop="5dp"
@@ -893,6 +893,8 @@
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
 
 
         <LinearLayout
