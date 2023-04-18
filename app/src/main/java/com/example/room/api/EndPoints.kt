@@ -16,4 +16,7 @@ interface EndPoints {
     @GET("salas/{id}")
     fun getSalaById(@Path("id") id: Int): Call<Salas>
 
+    @GET("biblioteca")
+    fun getBiblioteca() : Call<List<LugaresBiblioteca>>
+
 }

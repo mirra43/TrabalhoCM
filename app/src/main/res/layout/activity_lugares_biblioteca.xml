@@ -799,7 +799,7 @@
                                 android:backgroundTint="@color/verde"></View>
 
                             <View
-                                android:id="@+id51"
+                                android:id="@+id/l51"
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
                                 android:layout_marginTop="5dp"
