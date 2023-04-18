@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
     fun abreBiblioteca(view: View) {
         //remover o toast
         //Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
-
         val intent = Intent(this, Lugares_Biblioteca::class.java)
         startActivity(intent)
     }
