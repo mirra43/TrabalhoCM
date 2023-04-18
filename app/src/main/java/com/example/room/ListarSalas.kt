@@ -2,8 +2,10 @@ package com.example.room
 
 //import android.content.Intent
 //import android.os.AsyncTask
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -123,4 +125,39 @@ class ListarSalas : AppCompatActivity() {
     data class Sala(val id: Int, val nome: String,val ocupada: Int)
 */
 
+
+    fun abrePaginaInicial(view: View) {
+        //remover o toast
+        //Toast.makeText(applicationContext, "Abre Página Inicial", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun abreBiblioteca(view: View) {
+        //remover o toast
+        //Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, Lugares_Biblioteca::class.java)
+        startActivity(intent)
+    }
+
+    fun abreSalaEstudo(view: View) {
+        //remover o toast
+        //Toast.makeText(applicationContext, "Abre Salas de Estudo", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, ListarSalas::class.java)
+        startActivity(intent)
+        //criar  SalasEstudo para isto funcionar
+        /*val intent = Intent(this, SalasEstudo::class.java)
+        startActivity(intent)*/
+    }
+    fun abreMapa(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+    }
+    fun abreLogout(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
+    }
 }
