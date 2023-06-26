@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,11 +13,28 @@
         android:theme="@style/Theme.Room"
         tools:targetApi="31">
         <activity
-            android:name=".SalasEstudo"
-            android:exported="false" />
+            android:name=".Lugares_Biblioteca"
+            android:exported="false"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".InfoSalaEstudo"
+            android:exported="false"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ListarSalas"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".PaginaInicialLoginRegisto"
+            android:exported="true"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,5 +43,4 @@
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

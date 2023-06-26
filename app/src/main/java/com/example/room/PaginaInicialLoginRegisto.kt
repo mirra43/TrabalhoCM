@@ -1,34 +1,47 @@
 package com.example.room
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.*
-import androidx.drawerlayout.widget.DrawerLayout
-import retrofit2.Call
-import retrofit2.Callback
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
 
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navDrawer: LinearLayout
-
+class PaginaInicialLoginRegisto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_pagina_inicial_login_registo)
 
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navDrawer = findViewById(R.id.nav_drawer)
 
-        val openMenuButton: ImageButton = findViewById(R.id.button_open_menu)
-        openMenuButton.setOnClickListener {
-            drawerLayout.openDrawer(navDrawer)
-        }
 
     }
 
+
+    fun abrePaginaLogin(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Pagina Login", Toast.LENGTH_SHORT).show()
+
+
+        //remover isto (so para testes)
+        //****************************************************************************//
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        //****************************************************************************//
+
+    }
+
+    fun abrePaginaRegisto(view: View) {
+        //remover o toast
+        Toast.makeText(applicationContext, "Abre Pagina Registo", Toast.LENGTH_SHORT).show()
+    }
 
     fun abrePaginaInicial(view: View) {
         //remover o toast
@@ -41,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     fun abreBiblioteca(view: View) {
         //remover o toast
         //Toast.makeText(applicationContext, "Abre Biblioteca", Toast.LENGTH_SHORT).show()
+
         val intent = Intent(this, Lugares_Biblioteca::class.java)
         startActivity(intent)
     }
@@ -64,6 +78,6 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
     }
 
+
+
 }
-
-
