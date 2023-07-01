@@ -47,16 +47,16 @@ class LocalizaUser : AppCompatActivity() {
         // Obtém o resultado da atividade de digitalização
         val result: IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
 
-        // Verifica se o conteúdo do código de barras foi obtido com sucesso
+        // Verifica se o conteúdo do código foi obtido com sucesso
         if (result.contents != null) {
-            // Exibe o conteúdo do código de barras em um diálogo de alerta
+            // Exibe o conteúdo do código num diálogo de alerta
             showResultDialog(result.contents)
         }
     }
 
     private fun showResultDialog(contents: String) {
         AlertDialog.Builder(this)
-            .setTitle("Result")
+            .setTitle("Localização")
             .setMessage(contents)
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
