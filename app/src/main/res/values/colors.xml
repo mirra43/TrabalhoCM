@@ -11,5 +11,7 @@
     <color name="verde">#2ca049</color>
     <color name="azul">#3c8bf2</color>
     <color name="vermelho">#FF0000</color>
+    <color name="azulLogin">#3C8BF2</color>
+    <color name="verdeRegisto">#2BA14B</color>
 
 </resources>

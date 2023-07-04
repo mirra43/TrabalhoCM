@@ -66,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageviewuser"
-                    android:text="mirra"
+                    android:text=""
                     android:layout_centerHorizontal="true">
 
                 </TextView>
@@ -342,6 +342,35 @@
                         android:textSize="18dp"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/white"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/botaomenu6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/botaomenu4"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreLocalizacao"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/location"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Localização"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
 
@@ -349,10 +378,10 @@
                     android:id="@+id/separador2"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/white"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_below="@id/botaomenu4"
-                    android:layout_marginTop="100dp"
+                    android:layout_below="@id/botaomenu6"
                     android:layout_marginBottom="10dp"/>
 
 
@@ -384,6 +413,10 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
+
+                <!-- Botao Menu -->
+
+
 
             </RelativeLayout>
 

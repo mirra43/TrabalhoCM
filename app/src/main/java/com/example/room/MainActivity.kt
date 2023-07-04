@@ -1,5 +1,6 @@
 package com.example.room
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navDrawer: LinearLayout
+    private lateinit var textViewUser: TextView // Adicione esta linha
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -21,11 +23,19 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.drawer_layout)
         navDrawer = findViewById(R.id.nav_drawer)
+        textViewUser = findViewById(R.id.textviewuser)
 
         val openMenuButton: ImageButton = findViewById(R.id.button_open_menu)
         openMenuButton.setOnClickListener {
             drawerLayout.openDrawer(navDrawer)
         }
+
+        // Recuperar o nome de usuário das SharedPreferences
+        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "") // Pode fornecer um valor padrão vazio caso não encontre o valor
+
+        // Definir o texto da TextView com o nome de usuário
+        textViewUser.text = username
 
     }
 
@@ -57,11 +67,26 @@ class MainActivity : AppCompatActivity() {
     }
     fun abreMapa(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MapaEscola::class.java)
+        startActivity(intent)
     }
     fun abreLogout(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
+        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.remove("username")
+        editor.apply()
+
+        val intent = Intent(this, Login::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    fun abreLocalizacao(view: View) {
+
+        val intent = Intent(this, LocalizaUser::class.java)
+        startActivity(intent)
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.room
 
 //import android.content.Intent
 //import android.os.AsyncTask
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -154,10 +155,24 @@ class ListarSalas : AppCompatActivity() {
     }
     fun abreMapa(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MapaEscola::class.java)
+        startActivity(intent)
     }
     fun abreLogout(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
+        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.remove("username")
+        editor.apply()
+
+        val intent = Intent(this, Login::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+    fun abreLocalizacao(view: View) {
+
+        val intent = Intent(this, LocalizaUser::class.java)
+        startActivity(intent)
     }
 }

@@ -1,6 +1,7 @@
 package com.example.room
 
-import android.graphics.Color
+
+import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -12,12 +13,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-
 import com.example.room.api.EndPoints
 import com.example.room.api.LugaresBiblioteca
 import com.example.room.api.ServiceBuilder
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -71,6 +70,8 @@ class Lugares_Biblioteca : AppCompatActivity() {
         })
     }
 
+
+
     fun abrePaginaInicial(view: View) {
         //remover o toast
         //Toast.makeText(applicationContext, "Abre Página Inicial", Toast.LENGTH_SHORT).show()
@@ -99,10 +100,30 @@ class Lugares_Biblioteca : AppCompatActivity() {
     }
     fun abreMapa(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MapaEscola::class.java)
+        startActivity(intent)
     }
     fun abreLogout(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Dá Logout e Abre Página Login", Toast.LENGTH_SHORT).show()
+        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.remove("username")
+        editor.apply()
+
+        val intent = Intent(this, Login::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    fun RABiblioteca(view: View) {
+
+
+    }
+
+    fun abreLocalizacao(view: View) {
+
+        val intent = Intent(this, LocalizaUser::class.java)
+        startActivity(intent)
     }
 }
