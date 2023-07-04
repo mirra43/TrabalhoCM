@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <!-- Ecrã Inicial -->
         <ImageButton
@@ -43,10 +43,16 @@ android:layout_height="match_parent">
 
 
 
+        <Spinner
+        android:id="@+id/floorSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
 
-
-    </RelativeLayout>
+        </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -60,15 +66,34 @@ android:layout_height="match_parent">
         app:cardBackgroundColor="@color/amarelo"
         app:cardCornerRadius="30dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver localização"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:id="@+id/btn_scan">
-        </Button>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/floorSpinner">
 
+
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/roomsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <!-- Resto do código... -->
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+
+    </ScrollView>
 
     </androidx.cardview.widget.CardView>
 
@@ -222,14 +247,42 @@ android:layout_height="match_parent">
             </LinearLayout>
 
 
+            <LinearLayout
+                android:id="@+id/botaomenu6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/botaomenu4"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:onClick="abreLocalizacao"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/location"
+                    />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Localização"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+
             <ImageView
                 android:id="@+id/separador2"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/white"
                 android:layout_marginHorizontal="15dp"
-                android:layout_below="@id/botaomenu4"
-                android:layout_marginTop="100dp"
+                android:layout_below="@id/botaomenu6"
                 android:layout_marginBottom="10dp"/>
 
 
@@ -267,7 +320,7 @@ android:layout_height="match_parent">
     </LinearLayout>
 
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 
 

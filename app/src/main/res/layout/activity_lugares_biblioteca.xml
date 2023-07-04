@@ -207,7 +207,7 @@
 
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/rectangle"
-                                android:backgroundTint="@color/vermelho"></View>
+                                android:backgroundTint="@color/verde"></View>
 
                         </LinearLayout>
                         <View
@@ -234,7 +234,7 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/rectangle"
-                                android:backgroundTint="@color/vermelho"></View>
+                                android:backgroundTint="@color/verde"></View>
 
                             <View
                                 android:id="@+id/l5"
@@ -256,7 +256,7 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/rectangle"
-                                android:backgroundTint="@color/vermelho"></View>
+                                android:backgroundTint="@color/verde"></View>
 
                         </LinearLayout>
 
@@ -286,7 +286,7 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/rectangle"
-                                android:backgroundTint="@color/vermelho"></View>
+                                android:backgroundTint="@color/verde"></View>
 
                             <View
                                 android:id="@+id/l9"
@@ -879,14 +879,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/biblioteca"
                         android:layout_centerInParent="true">
-                        <Button
-                            android:id="@+id/ir_biblioteca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/mesa"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="30dp"
-                            android:text="Ir para a Biblioteca ..."></Button>
+
+
                     </RelativeLayout>
 
 
@@ -1055,14 +1049,42 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:id="@+id/botaomenu6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/botaomenu4"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="abreLocalizacao"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/location"
+                        />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Localização"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+
                 <ImageView
                     android:id="@+id/separador2"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/white"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_below="@id/botaomenu4"
-                    android:layout_marginTop="100dp"
+                    android:layout_below="@id/botaomenu6"
                     android:layout_marginBottom="10dp"/>
 
 

@@ -27,20 +27,19 @@ class PaginaInicialLoginRegisto : AppCompatActivity() {
 
     fun abrePaginaLogin(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Pagina Login", Toast.LENGTH_SHORT).show()
-
 
         //remover isto (so para testes)
         //****************************************************************************//
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, Login::class.java)
         startActivity(intent)
         //****************************************************************************//
 
     }
 
     fun abrePaginaRegisto(view: View) {
-        //remover o toast
-        Toast.makeText(applicationContext, "Abre Pagina Registo", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, Registo::class.java)
+        startActivity(intent)
     }
 
     fun abrePaginaInicial(view: View) {
@@ -71,7 +70,8 @@ class PaginaInicialLoginRegisto : AppCompatActivity() {
     }
     fun abreMapa(view: View) {
         //remover o toast
-        Toast.makeText(applicationContext, "Abre Mapa ESTG", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MapaEscola::class.java)
+        startActivity(intent)
     }
     fun abreLogout(view: View) {
         //remover o toast

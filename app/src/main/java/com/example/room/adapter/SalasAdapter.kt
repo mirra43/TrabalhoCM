@@ -10,10 +10,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.room.InfoSalaEstudo
-import com.example.room.ListarSalas
 import com.example.room.R
 import com.example.room.api.Salas
-import com.example.room.api.User
 
 class SalasAdapter(val salas: List<Salas>): RecyclerView.Adapter<SalasViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalasViewHolder {

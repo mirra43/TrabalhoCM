@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
@@ -16,12 +17,8 @@ class LocalizaUser : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_localiza_user)
+       startScan()
 
-        // Inicializa o botão de digitalização
-        btnScan = findViewById(R.id.btn_scan)
-        btnScan.setOnClickListener {
-            startScan()
-        }
     }
 
     private fun startScan() {
@@ -55,13 +52,51 @@ class LocalizaUser : AppCompatActivity() {
     }
 
     private fun showResultDialog(contents: String) {
-        AlertDialog.Builder(this)
-            .setTitle("Localização")
-            .setMessage(contents)
-            .setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss()
+        val palavraDesejada = detectarPalavraDesejada(contents)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Localização")
+        builder.setMessage(contents)
+        builder.setPositiveButton("Voltar") { dialog, _ ->
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        if (palavraDesejada != null) {
+            builder.setNegativeButton("Ver no mapa") { dialog, _ ->
+
+                if (palavraDesejada in listOf("Bar", "Cantina", "GAC")) {
+                    val intent = Intent(this, MapaEscola::class.java)
+                    intent.putExtra("pisoSala", 1) // Substitua o valor '1' pelo valor desejado do piso
+                    startActivity(intent)
+                }
+
+                if (palavraDesejada in listOf("reprografia")) {
+                    val intent = Intent(this, MapaEscola::class.java)
+                    intent.putExtra("pisoSala", 2) // Substitua o valor '1' pelo valor desejado do piso
+                    startActivity(intent)
+                }
+
+                if (palavraDesejada in listOf("sala")) {
+                    val intent = Intent(this, MapaEscola::class.java)
+                    intent.putExtra("pisoSala", 3) // Substitua o valor '1' pelo valor desejado do piso
+                    startActivity(intent)
+                }
             }
-            .show()
+        }
+
+        builder.show()
+
+        if (palavraDesejada != null) {
+            Toast.makeText(this, "Palavra desejada encontrada: $palavraDesejada", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun detectarPalavraDesejada(contents: String): String? {
+        val padrao = "(Bar|Cantina|GAC|reprografia|sala)".toRegex(RegexOption.IGNORE_CASE)
+        val match = padrao.find(contents)
+
+        return match?.value
     }
 }
 
